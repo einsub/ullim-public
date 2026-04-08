@@ -1,0 +1,9 @@
+{
+  "name": "ullim-public",
+  "description": "Ullim Studio 외부 공개용 웹사이트",
+  "type": "web",
+  "outputs": {
+    "production": "https://ull.im",
+    "dev": "http://localhost:3000"
+  }
+}

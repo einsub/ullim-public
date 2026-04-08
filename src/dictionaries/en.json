@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "ullim",
+    "description": "ullim studio"
+  },
+  "landing": {
+    "tagline": "Small apps, crafted with care",
+    "apps": "Apps",
+    "contact": "Contact",
+    "contactEmail": "support@ull.im"
+  },
+  "crossword": {
+    "name": "낱말퀴즈",
+    "description": "A fresh crossword puzzle every day",
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: April 5, 2026",
+      "overviewTitle": "Overview",
+      "overview": "낱말퀴즈 (\"the App\") is developed by Ullim Studio. This privacy policy explains how we handle your information.",
+      "dataTitle": "Data We Collect",
+      "data": "The App does not collect, store, or transmit any personal data. Game progress and settings are stored locally on your device only.",
+      "thirdPartyTitle": "Third-Party Services",
+      "thirdParty": "The App uses the following third-party services:",
+      "admobTitle": "Google AdMob",
+      "admob": "We display advertisements through Google AdMob. AdMob may collect and use data to serve personalized or non-personalized ads. This may include device identifiers, IP address, and usage data.",
+      "childrenTitle": "Children's Privacy",
+      "children": "The App is rated 4+ and does not knowingly collect personal information from children.",
+      "changesTitle": "Changes",
+      "changes": "We may update this privacy policy from time to time. Changes will be posted on this page.",
+      "contactTitle": "Contact",
+      "contact": "If you have questions about this privacy policy, contact us at:"
+    },
+    "support": {
+      "title": "낱말퀴즈 - Support",
+      "contactTitle": "Contact",
+      "contactDesc": "For questions, feedback, or bug reports, please email us at:",
+      "howToPlayTitle": "How to Play",
+      "howToPlay": [
+        "Read the across/down clues and fill in the blanks.",
+        "Tap a cell to see the clue for that word.",
+        "Complete all cells to auto-check your answers."
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "q": "Is my game progress saved?",
+          "a": "Yes, game progress is automatically saved to your device."
+        },
+        {
+          "q": "Can I play offline?",
+          "a": "Yes, all puzzles are included in the app and can be played without an internet connection."
+        }
+      ]
+    }
+  },
+  "minesweeper": {
+    "name": "Minesweeper Swipe",
+    "description": "Minesweeper with swipe controls",
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: April 8, 2026",
+      "overviewTitle": "Overview",
+      "overview": "Minesweeper Swipe (\"the App\") is developed by Ullim Studio. This privacy policy explains how we handle your information.",
+      "dataTitle": "Data We Collect",
+      "data": "The App itself does not collect, store, or transmit any personal data. Game records and settings are stored locally on your device only.",
+      "thirdPartyTitle": "Third-Party Services",
+      "thirdParty": "The App uses the following third-party services:",
+      "admobTitle": "Google AdMob",
+      "admob": "We display banner advertisements through Google AdMob. AdMob may collect and use data to serve personalized or non-personalized ads. This may include device identifiers, IP address, and usage data.",
+      "gameCenterTitle": "Apple Game Center",
+      "gameCenter": "The App integrates with Apple Game Center for leaderboards. Game Center is managed by Apple and subject to Apple's Privacy Policy.",
+      "iapTitle": "In-App Purchases",
+      "iap": "The App offers an in-app purchase to remove advertisements. Purchases are processed by Apple and subject to Apple's terms.",
+      "childrenTitle": "Children's Privacy",
+      "children": "The App is rated 4+ and does not knowingly collect personal information from children.",
+      "changesTitle": "Changes",
+      "changes": "We may update this privacy policy from time to time. Changes will be posted on this page.",
+      "contactTitle": "Contact",
+      "contact": "If you have questions about this privacy policy, contact us at:"
+    },
+    "support": {
+      "title": "Minesweeper Swipe - Support",
+      "contactTitle": "Contact",
+      "contactDesc": "For questions, feedback, or bug reports, please email us at:",
+      "howToPlayTitle": "How to Play",
+      "howToPlay": [
+        "Tap — Reveal a cell",
+        "Swipe Up — Place or remove a flag",
+        "Tap Number — Reveal neighbors (when flags match number)"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "q": "How do I restore my ad removal purchase?",
+          "a": "Go to Records screen and tap \"Restore Purchase\" at the bottom."
+        },
+        {
+          "q": "How do I reset my records?",
+          "a": "Go to Records screen and tap \"Clear Records\" at the bottom."
+        }
+      ]
+    }
+  },
+  "common": {
+    "privacyPolicy": "Privacy Policy",
+    "support": "Support",
+    "home": "Home",
+    "googlePrivacyPolicy": "Google's Privacy Policy",
+    "applePrivacyPolicy": "Apple's Privacy Policy"
+  }
+}

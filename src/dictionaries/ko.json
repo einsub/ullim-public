@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "ullim",
+    "description": "ullim studio"
+  },
+  "landing": {
+    "tagline": "작지만 정성스러운 앱을 만듭니다",
+    "apps": "Apps",
+    "contact": "문의",
+    "contactEmail": "support@ull.im"
+  },
+  "crossword": {
+    "name": "낱말퀴즈",
+    "description": "매일 새로운 낱말 퍼즐",
+    "privacyPolicy": {
+      "title": "개인정보 처리방침",
+      "lastUpdated": "최종 수정: 2026년 4월 5일",
+      "overviewTitle": "개요",
+      "overview": "낱말퀴즈(\"본 앱\")는 Ullim Studio에서 개발했습니다. 본 개인정보 처리방침은 사용자의 정보를 어떻게 다루는지 설명합니다.",
+      "dataTitle": "수집하는 데이터",
+      "data": "본 앱은 개인 데이터를 수집, 저장, 전송하지 않습니다. 게임 진행 상황과 설정은 사용자의 기기에만 저장됩니다.",
+      "thirdPartyTitle": "제3자 서비스",
+      "thirdParty": "본 앱은 다음 제3자 서비스를 사용합니다:",
+      "admobTitle": "Google AdMob",
+      "admob": "Google AdMob을 통해 광고를 표시합니다. AdMob은 맞춤형 또는 비맞춤형 광고를 제공하기 위해 데이터를 수집하고 사용할 수 있습니다. 여기에는 기기 식별자, IP 주소, 사용 데이터가 포함될 수 있습니다.",
+      "childrenTitle": "아동 개인정보",
+      "children": "본 앱은 4세 이상을 대상으로 하며, 아동의 개인정보를 의도적으로 수집하지 않습니다.",
+      "changesTitle": "변경사항",
+      "changes": "본 개인정보 처리방침은 수시로 업데이트될 수 있습니다. 변경사항은 이 페이지에 게시됩니다.",
+      "contactTitle": "문의",
+      "contact": "개인정보 처리방침에 대한 문의:"
+    },
+    "support": {
+      "title": "낱말퀴즈 - 지원",
+      "contactTitle": "문의",
+      "contactDesc": "질문, 피드백, 버그 신고는 아래 이메일로 연락해 주세요:",
+      "howToPlayTitle": "플레이 방법",
+      "howToPlay": [
+        "가로/세로 힌트를 읽고 빈칸에 낱말을 채워 넣으세요.",
+        "칸을 탭하면 해당 단어의 힌트가 표시됩니다.",
+        "모든 칸을 채우면 자동으로 채점됩니다."
+      ],
+      "faqTitle": "자주 묻는 질문",
+      "faq": [
+        {
+          "q": "게임 진행이 저장되나요?",
+          "a": "네, 게임 진행 상황은 기기에 자동으로 저장됩니다."
+        },
+        {
+          "q": "오프라인에서도 플레이할 수 있나요?",
+          "a": "네, 모든 퍼즐은 앱에 포함되어 있어 인터넷 연결 없이도 플레이할 수 있습니다."
+        }
+      ]
+    }
+  },
+  "minesweeper": {
+    "name": "Minesweeper Swipe",
+    "description": "스와이프로 즐기는 지뢰찾기",
+    "privacyPolicy": {
+      "title": "개인정보 처리방침",
+      "lastUpdated": "최종 수정: 2026년 4월 8일",
+      "overviewTitle": "개요",
+      "overview": "Minesweeper Swipe(\"본 앱\")는 Ullim Studio에서 개발했습니다. 본 개인정보 처리방침은 사용자의 정보를 어떻게 다루는지 설명합니다.",
+      "dataTitle": "수집하는 데이터",
+      "data": "본 앱 자체는 개인 데이터를 수집, 저장, 전송하지 않습니다. 게임 기록과 설정은 사용자의 기기에만 저장됩니다.",
+      "thirdPartyTitle": "제3자 서비스",
+      "thirdParty": "본 앱은 다음 제3자 서비스를 사용합니다:",
+      "admobTitle": "Google AdMob",
+      "admob": "Google AdMob을 통해 배너 광고를 표시합니다. AdMob은 맞춤형 또는 비맞춤형 광고를 제공하기 위해 데이터를 수집하고 사용할 수 있습니다. 여기에는 기기 식별자, IP 주소, 사용 데이터가 포함될 수 있습니다.",
+      "gameCenterTitle": "Apple Game Center",
+      "gameCenter": "본 앱은 리더보드를 위해 Apple Game Center와 연동됩니다. Game Center는 Apple이 관리하며 Apple의 개인정보 처리방침이 적용됩니다.",
+      "iapTitle": "인앱 구매",
+      "iap": "본 앱은 광고 제거 인앱 구매를 제공합니다. 구매는 Apple을 통해 처리되며 Apple의 약관이 적용됩니다.",
+      "childrenTitle": "아동 개인정보",
+      "children": "본 앱은 4세 이상을 대상으로 하며, 아동의 개인정보를 의도적으로 수집하지 않습니다.",
+      "changesTitle": "변경사항",
+      "changes": "본 개인정보 처리방침은 수시로 업데이트될 수 있습니다. 변경사항은 이 페이지에 게시됩니다.",
+      "contactTitle": "문의",
+      "contact": "개인정보 처리방침에 대한 문의:"
+    },
+    "support": {
+      "title": "Minesweeper Swipe - 지원",
+      "contactTitle": "문의",
+      "contactDesc": "질문, 피드백, 버그 신고는 아래 이메일로 연락해 주세요:",
+      "howToPlayTitle": "플레이 방법",
+      "howToPlay": [
+        "탭 — 칸 열기",
+        "위로 스와이프 — 깃발 꽂기/빼기",
+        "숫자 탭 — 주변 칸 열기 (깃발 수가 숫자와 같을 때)"
+      ],
+      "faqTitle": "자주 묻는 질문",
+      "faq": [
+        {
+          "q": "광고 제거 구매를 복원하려면?",
+          "a": "기록 화면 하단의 \"구매 복원\"을 탭하세요."
+        },
+        {
+          "q": "기록을 초기화하려면?",
+          "a": "기록 화면 하단의 \"기록 초기화\"를 탭하세요."
+        }
+      ]
+    }
+  },
+  "common": {
+    "privacyPolicy": "개인정보 처리방침",
+    "support": "지원",
+    "home": "홈",
+    "googlePrivacyPolicy": "Google 개인정보 처리방침",
+    "applePrivacyPolicy": "Apple 개인정보 처리방침"
+  }
+}

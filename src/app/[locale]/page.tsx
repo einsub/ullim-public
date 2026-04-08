@@ -17,7 +17,9 @@ export default async function Home({
   const dict = await getDictionary(locale as Locale);
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-24 bg-[#4D8F87] -mt-14 pt-38 min-h-screen">
+    <div className="flex flex-col items-center justify-center px-6 min-h-screen">
+      <div className="flex-1" />
+
       <h1 className="text-3xl font-bold tracking-tight text-white">ullim</h1>
       <p className="mt-3 text-white/70">
         {dict.landing.tagline}
@@ -56,7 +58,9 @@ export default async function Home({
         </a>
       </div>
 
-      <footer className="mt-auto pt-16 pb-8 text-center text-xs text-white/30">
+      <div className="flex-1" />
+
+      <footer className="pb-8 text-center text-xs text-white/30">
         <p>&copy; {new Date().getFullYear()} Ullim Studio</p>
       </footer>
     </div>

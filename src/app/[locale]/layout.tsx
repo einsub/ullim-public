@@ -52,19 +52,16 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${geist.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-geist-sans)]">
+      <body className="min-h-full flex flex-col font-[family-name:var(--font-geist-sans)] bg-[#4D8F87]">
         <header className="absolute top-0 right-0 z-10 px-6 py-4">
           <Link
             href={`/${otherLocale}`}
-            className="text-sm text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+            className="text-sm text-white/70 hover:text-white transition-colors"
           >
             {otherLocale === "ko" ? "한국어" : "English"}
           </Link>
         </header>
         <main className="flex-1">{children}</main>
-        <footer className="px-6 py-8 text-center text-xs text-neutral-400">
-          <p>&copy; {new Date().getFullYear()} Ullim Studio</p>
-        </footer>
       </body>
     </html>
   );

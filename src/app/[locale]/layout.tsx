@@ -53,7 +53,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-geist-sans)]">
-        <header className="flex justify-end px-6 py-4">
+        <header className="absolute top-0 right-0 z-10 px-6 py-4">
           <Link
             href={`/${otherLocale}`}
             className="text-sm text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"

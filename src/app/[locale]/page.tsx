@@ -17,9 +17,9 @@ export default async function Home({
   const dict = await getDictionary(locale as Locale);
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-24">
-      <h1 className="text-3xl font-bold tracking-tight">ullim</h1>
-      <p className="mt-3 text-neutral-500 dark:text-neutral-400">
+    <div className="flex flex-col items-center justify-center px-6 py-24 bg-[#4D8F87] -mt-14 pt-38 min-h-screen">
+      <h1 className="text-3xl font-bold tracking-tight text-white">ullim</h1>
+      <p className="mt-3 text-white/70">
         {dict.landing.tagline}
       </p>
 
@@ -30,7 +30,7 @@ export default async function Home({
             <Link
               key={app.key}
               href={`/${locale}/${app.href}`}
-              className="flex items-center gap-4 rounded-lg border border-neutral-200 dark:border-neutral-800 px-5 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors"
+              className="flex items-center gap-4 rounded-lg bg-white/10 backdrop-blur px-5 py-4 hover:bg-white/20 transition-colors"
             >
               <Image
                 src={app.icon}
@@ -40,8 +40,8 @@ export default async function Home({
                 className="rounded-lg"
               />
               <div>
-                <div className="font-medium">{appDict.name}</div>
-                <div className="text-sm text-neutral-400">
+                <div className="font-medium text-white">{appDict.name}</div>
+                <div className="text-sm text-white/60">
                   {appDict.description}
                 </div>
               </div>
@@ -50,11 +50,15 @@ export default async function Home({
         })}
       </div>
 
-      <div className="mt-16 text-sm text-neutral-400">
-        <a href={`mailto:${dict.landing.contactEmail}`} className="hover:underline">
+      <div className="mt-16 text-sm text-white/50">
+        <a href={`mailto:${dict.landing.contactEmail}`} className="hover:text-white/80 transition-colors">
           {dict.landing.contactEmail}
         </a>
       </div>
+
+      <footer className="mt-auto pt-16 pb-8 text-center text-xs text-white/30">
+        <p>&copy; {new Date().getFullYear()} Ullim Studio</p>
+      </footer>
     </div>
   );
 }

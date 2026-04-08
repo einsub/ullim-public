@@ -18,14 +18,7 @@ export default async function Home({
 
   return (
     <div className="flex flex-col items-center justify-center px-6 py-24">
-      <Image
-        src="/icons/ullim.png"
-        alt="ullim"
-        width={72}
-        height={72}
-        className="rounded-2xl"
-      />
-      <h1 className="mt-5 text-3xl font-bold tracking-tight">ullim</h1>
+      <h1 className="text-3xl font-bold tracking-tight">ullim</h1>
       <p className="mt-3 text-neutral-500 dark:text-neutral-400">
         {dict.landing.tagline}
       </p>
@@ -47,10 +40,10 @@ export default async function Home({
                 className="rounded-lg"
               />
               <div>
-                <span className="font-medium">{appDict.name}</span>
-                <span className="ml-2 text-sm text-neutral-400">
+                <div className="font-medium">{appDict.name}</div>
+                <div className="text-sm text-neutral-400">
                   {appDict.description}
-                </span>
+                </div>
               </div>
             </Link>
           );

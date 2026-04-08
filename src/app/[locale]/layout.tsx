@@ -28,6 +28,10 @@ export async function generateMetadata({
       template: `%s — ${dict.meta.title}`,
     },
     description: dict.meta.description,
+    icons: {
+      icon: "/icons/ullim.png",
+      apple: "/icons/ullim.png",
+    },
   };
 }
 

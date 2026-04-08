@@ -5,6 +5,7 @@ import { locales, type Locale } from "@/i18n";
 import { getDictionary } from "@/dictionaries";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -62,6 +63,7 @@ export default async function LocaleLayout({
           </Link>
         </header>
         <main className="flex-1">{children}</main>
+        <Analytics />
       </body>
     </html>
   );

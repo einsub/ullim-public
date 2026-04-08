@@ -69,7 +69,7 @@ export default async function MinesweeperPage({
         ))}
       </ul>
 
-      <nav className="mt-10 flex gap-4 text-sm">
+      <nav className="mt-10 flex justify-center gap-4 text-sm">
         <Link
           href={`/${locale}/minesweeper/privacy-policy`}
           className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"

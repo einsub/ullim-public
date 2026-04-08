@@ -41,7 +41,24 @@ export default async function CrosswordPage({
         {app.intro}
       </p>
 
-      <ul className="mt-6 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+      <div className="mt-8 flex gap-3 overflow-x-auto pb-2">
+        {[
+          { src: "/screenshots/crossword/2_appstore.jpg", alt: "Puzzle" },
+          { src: "/screenshots/crossword/4_appstore.jpg", alt: "Complete" },
+          { src: "/screenshots/crossword/5_appstore.jpg", alt: "Stages" },
+        ].map((shot) => (
+          <Image
+            key={shot.src}
+            src={shot.src}
+            alt={shot.alt}
+            width={180}
+            height={390}
+            className="shrink-0 rounded-xl border border-neutral-200 dark:border-neutral-800"
+          />
+        ))}
+      </div>
+
+      <ul className="mt-8 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
         {app.features.map((feature, i) => (
           <li key={i} className="flex gap-2">
             <span className="text-neutral-300 dark:text-neutral-600">—</span>

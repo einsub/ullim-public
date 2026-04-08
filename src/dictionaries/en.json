@@ -11,7 +11,16 @@
   },
   "crossword": {
     "name": "낱말퀴즈",
+    "subtitle": "Korean Crossword Puzzles",
     "description": "A fresh crossword puzzle every day",
+    "intro": "A retro newspaper-style Korean crossword puzzle app. Each hint comes from the Korean Basic Dictionary, so you naturally build your vocabulary as you play.",
+    "features": [
+      "Accurate clues from the National Institute of Korean Language dictionary",
+      "Fully offline — no internet required",
+      "Auto-save so you can pick up where you left off",
+      "Use hints to reveal letters when you're stuck",
+      "Retro newspaper aesthetic design"
+    ],
     "privacyPolicy": {
       "title": "Privacy Policy",
       "lastUpdated": "Last updated: April 5, 2026",
@@ -55,7 +64,16 @@
   },
   "minesweeper": {
     "name": "Minesweeper Swipe",
+    "subtitle": "Classic Puzzle, Swipe to Flag",
     "description": "Minesweeper with swipe controls",
+    "intro": "The classic Minesweeper you know and love, reimagined for touchscreen. Three gestures. Zero wait time. Every action is instant.",
+    "features": [
+      "Tap to reveal, swipe up to flag, tap a number to chord",
+      "Three difficulty levels — Beginner (9×9), Intermediate (16×16), Expert (16×30)",
+      "Global leaderboards via Game Center",
+      "Personal records, win rates, and game history per difficulty",
+      "One small banner ad, removable with a one-time purchase"
+    ],
     "privacyPolicy": {
       "title": "Privacy Policy",
       "lastUpdated": "Last updated: April 8, 2026",

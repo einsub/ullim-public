@@ -1,5 +1,6 @@
 import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function CrosswordPage({
@@ -20,21 +21,45 @@ export default async function CrosswordPage({
         &larr; {dict.common.home}
       </Link>
 
-      <h1 className="mt-8 text-2xl font-bold">{app.name}</h1>
-      <p className="mt-2 text-neutral-500 dark:text-neutral-400">
-        {app.description}
+      <div className="mt-8 flex items-center gap-4">
+        <Image
+          src="/icons/crossword.png"
+          alt={app.name}
+          width={64}
+          height={64}
+          className="rounded-2xl"
+        />
+        <div>
+          <h1 className="text-2xl font-bold">{app.name}</h1>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            {app.subtitle}
+          </p>
+        </div>
+      </div>
+
+      <p className="mt-6 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+        {app.intro}
       </p>
 
-      <nav className="mt-10 space-y-2 text-sm">
+      <ul className="mt-6 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+        {app.features.map((feature, i) => (
+          <li key={i} className="flex gap-2">
+            <span className="text-neutral-300 dark:text-neutral-600">—</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+
+      <nav className="mt-10 flex gap-4 text-sm">
         <Link
           href={`/${locale}/crossword/privacy-policy`}
-          className="block text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
+          className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
         >
           {dict.common.privacyPolicy}
         </Link>
         <Link
           href={`/${locale}/crossword/support`}
-          className="block text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
+          className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
         >
           {dict.common.support}
         </Link>

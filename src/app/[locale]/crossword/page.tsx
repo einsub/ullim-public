@@ -41,7 +41,7 @@ export default async function CrosswordPage({
         {app.intro}
       </p>
 
-      <div className="mt-8 flex gap-3 overflow-x-auto pb-2">
+      <div className="mt-8 grid grid-cols-3 gap-3">
         {[
           { src: "/screenshots/crossword/2_appstore.jpg", alt: "Puzzle" },
           { src: "/screenshots/crossword/4_appstore.jpg", alt: "Complete" },
@@ -51,9 +51,9 @@ export default async function CrosswordPage({
             key={shot.src}
             src={shot.src}
             alt={shot.alt}
-            width={180}
-            height={390}
-            className="shrink-0 rounded-xl border border-neutral-200 dark:border-neutral-800"
+            width={300}
+            height={650}
+            className="w-full h-auto rounded-xl border border-neutral-200 dark:border-neutral-800"
           />
         ))}
       </div>

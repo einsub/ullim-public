@@ -4,6 +4,6 @@
   "type": "web",
   "outputs": {
     "production": "https://ull.im",
-    "dev": "http://localhost:3000"
+    "dev": "http://localhost:3100"
   }
 }

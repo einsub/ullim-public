@@ -4,6 +4,8 @@
   --color-background: #4D8F87;
   --color-foreground: #ffffff;
   --font-sans: var(--font-geist-sans);
+  --font-brand: var(--font-galada);
+  --font-brand-kr: var(--font-gowun-batang);
 }
 
 body {

@@ -20,20 +20,17 @@ export default async function Home({
     <div className="flex flex-col items-center justify-center px-6 min-h-screen">
       <div className="flex-1" />
 
-      <h1>
-        <Image
-          src="/icons/ullim-logo.svg"
-          alt="ullim"
-          width={180}
-          height={61}
-          priority
-        />
+      <h1 className={locale === "ko"
+        ? "font-[family-name:var(--font-gowun-batang)] text-7xl font-bold text-white"
+        : "font-[family-name:var(--font-galada)] text-7xl text-white"
+      }>
+        {locale === "ko" ? "울림" : "ullim"}
       </h1>
-      <p className="mt-3 text-white/70">
+      <p className="mt-6 text-white/70">
         {dict.landing.tagline}
       </p>
 
-      <div className="mt-16 w-full max-w-sm space-y-3">
+      <div className="mt-12 w-full max-w-sm space-y-3">
         {apps.map((app) => {
           const appDict = dict[app.key];
           return (
@@ -60,7 +57,7 @@ export default async function Home({
         })}
       </div>
 
-      <div className="mt-16 text-sm text-white/50">
+      <div className="mt-10 text-sm text-white/50">
         <a href={`mailto:${dict.landing.contactEmail}`} className="hover:text-white/80 transition-colors">
           {dict.landing.contactEmail}
         </a>

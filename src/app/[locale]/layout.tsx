@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Galada, Gowun_Batang } from "next/font/google";
 import "../globals.css";
 import { locales, type Locale } from "@/i18n";
 import { getDictionary } from "@/dictionaries";
@@ -9,6 +9,18 @@ import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const galada = Galada({
+  variable: "--font-galada",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const gowunBatang = Gowun_Batang({
+  variable: "--font-gowun-batang",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -30,7 +42,7 @@ export async function generateMetadata({
     },
     description: dict.meta.description,
     icons: {
-      icon: "/icons/ullim.png",
+      icon: "/icons/favicon.svg",
       apple: "/icons/ullim.png",
     },
   };
@@ -52,7 +64,7 @@ export default async function LocaleLayout({
   const otherLocale = locale === "ko" ? "en" : "ko";
 
   return (
-    <html lang={locale} className={`${geist.variable} h-full antialiased`}>
+    <html lang={locale} className={`${geist.variable} ${galada.variable} ${gowunBatang.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-geist-sans)] bg-[#4D8F87]">
         <header className="absolute top-0 right-0 z-10 px-6 py-4">
           <Link

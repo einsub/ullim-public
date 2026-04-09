@@ -20,7 +20,15 @@ export default async function Home({
     <div className="flex flex-col items-center justify-center px-6 min-h-screen">
       <div className="flex-1" />
 
-      <h1 className="text-3xl font-bold tracking-tight text-white">ullim</h1>
+      <h1>
+        <Image
+          src="/icons/ullim-logo.svg"
+          alt="ullim"
+          width={180}
+          height={61}
+          priority
+        />
+      </h1>
       <p className="mt-3 text-white/70">
         {dict.landing.tagline}
       </p>

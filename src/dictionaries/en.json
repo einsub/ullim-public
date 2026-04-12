@@ -119,6 +119,29 @@
       ]
     }
   },
+  "zuehane": {
+    "name": "Zuehane",
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: April 13, 2026",
+      "overviewTitle": "Overview",
+      "overview": "Zuehane (\"the App\") is a private family app developed by Ullim Studio. This privacy policy explains how we handle your information.",
+      "dataTitle": "Data We Collect",
+      "data": "The App collects and stores the following data on our server for sharing among family members: Google account information (name, email, profile photo), health records, meal records and photos, family calendar events, announcements, and comments. This data is only accessible to members of the same family group.",
+      "thirdPartyTitle": "Third-Party Services",
+      "thirdParty": "The App uses the following third-party services:",
+      "googleAuthTitle": "Google Sign-In",
+      "googleAuth": "The App uses Google Sign-In for authentication. Google processes data during the authentication flow and is subject to Google's Privacy Policy.",
+      "permissionsTitle": "Device Permissions",
+      "permissions": "The App requests camera access for taking photos of meals and test results, and photo library access for attaching images. These permissions are only activated when using the respective features.",
+      "securityTitle": "Data Security",
+      "security": "The App is a private application accessible only to invited family members. Data is transmitted over encrypted connections and only accessible to authenticated users.",
+      "changesTitle": "Changes",
+      "changes": "We may update this privacy policy from time to time. Changes will be posted on this page.",
+      "contactTitle": "Contact",
+      "contact": "If you have questions about this privacy policy, contact us at:"
+    }
+  },
   "common": {
     "privacyPolicy": "Privacy Policy",
     "support": "Support",

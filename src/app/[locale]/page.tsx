@@ -6,6 +6,7 @@ import Link from "next/link";
 const apps = [
   { key: "crossword" as const, href: "crossword", icon: "/icons/crossword.png" },
   { key: "minesweeper" as const, href: "minesweeper", icon: "/icons/minesweeper.png" },
+  { key: "jotDaily" as const, href: "jot-daily", icon: "/icons/jot-daily.png" },
 ];
 
 export default async function Home({

@@ -119,6 +119,67 @@
       ]
     }
   },
+  "jotDaily": {
+    "name": "Jot Daily",
+    "subtitle": "The simplest way to journal your day",
+    "description": "Minimal text journal",
+    "intro": "Jot Daily is a minimalist journaling app that captures your day in text only. No calendars, no stickers, no photos. Just words. Like the resonance of white space, it lets you focus on the act of writing itself.",
+    "features": [
+      "Minimal design focused purely on text",
+      "Unlimited entries — write as much as you want",
+      "App lock (passcode + Face ID)",
+      "Search to instantly find past entries",
+      "Google Drive auto-backup (Pro)"
+    ],
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: April 14, 2026",
+      "overviewTitle": "Overview",
+      "overview": "Jot Daily (\"the App\") is developed by Ullim Studio. This privacy policy explains how we handle your information.",
+      "dataTitle": "Data We Collect",
+      "data": "The App does not collect, store, or transmit any personal data to external servers. All journal entries are stored locally on your device only.",
+      "thirdPartyTitle": "Third-Party Services",
+      "thirdParty": "The App uses the following third-party services:",
+      "googleDriveTitle": "Google Drive (Pro Feature)",
+      "googleDrive": "Pro users can back up their entries to Google Drive. The App authenticates via Google Sign-In and uses only the drive.file scope, accessing only backup files created by the App. It does not access any other files on your Google Drive.",
+      "analyticsTitle": "Firebase Analytics",
+      "analytics": "We use Firebase Analytics to understand app usage patterns (screen views, feature usage frequency, etc.). The content of your journal entries (text) is never collected.",
+      "iapTitle": "In-App Purchases",
+      "iap": "The App offers an in-app purchase to unlock Pro features. Purchases are processed by Apple and subject to Apple's terms.",
+      "childrenTitle": "Children's Privacy",
+      "children": "The App is rated 4+ and does not knowingly collect personal information from children.",
+      "changesTitle": "Changes",
+      "changes": "We may update this privacy policy from time to time. Changes will be posted on this page.",
+      "contactTitle": "Contact",
+      "contact": "If you have questions about this privacy policy, contact us at:"
+    },
+    "support": {
+      "title": "Jot Daily - Support",
+      "contactTitle": "Contact",
+      "contactDesc": "For questions, feedback, or bug reports, please email us at:",
+      "howToUseTitle": "How to Use",
+      "howToUse": [
+        "Tap the + button at the bottom to write today's entry.",
+        "Tap an entry to edit it.",
+        "Use the arrows at the top to browse entries by month."
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "q": "Where are my entries stored?",
+          "a": "All entries are stored on your device only. Google Drive backup is available as a Pro feature."
+        },
+        {
+          "q": "Can I transfer my entries to another device?",
+          "a": "Purchase Pro, back up to Google Drive, then restore on the new device."
+        },
+        {
+          "q": "How do I restore my Pro purchase?",
+          "a": "Go to Settings > Google Drive Backup and tap \"Restore Purchase\"."
+        }
+      ]
+    }
+  },
   "zuehane": {
     "name": "Zuehane",
     "privacyPolicy": {

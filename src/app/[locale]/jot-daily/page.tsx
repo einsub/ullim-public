@@ -42,10 +42,11 @@ export default async function JotDailyPage({
           {app.intro}
         </p>
 
-        <div className="mt-8 grid grid-cols-2 gap-3">
+        <div className="mt-8 grid grid-cols-3 gap-3">
           {[
             { src: `/screenshots/jot-daily/onboarding-${locale}.png`, alt: "Onboarding" },
             { src: `/screenshots/jot-daily/timeline-${locale}.png`, alt: "Timeline" },
+            { src: `/screenshots/jot-daily/settings-${locale}.png`, alt: "Settings" },
           ].map((shot) => (
             <Image
               key={shot.src}

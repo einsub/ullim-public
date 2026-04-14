@@ -42,6 +42,22 @@ export default async function JotDailyPage({
           {app.intro}
         </p>
 
+        <div className="mt-8 grid grid-cols-2 gap-3">
+          {[
+            { src: `/screenshots/jot-daily/onboarding-${locale}.png`, alt: "Onboarding" },
+            { src: `/screenshots/jot-daily/timeline-${locale}.png`, alt: "Timeline" },
+          ].map((shot) => (
+            <Image
+              key={shot.src}
+              src={shot.src}
+              alt={shot.alt}
+              width={390}
+              height={844}
+              className="w-full h-auto rounded-xl border border-white/10"
+            />
+          ))}
+        </div>
+
         <ul className="mt-8 space-y-2 text-sm text-white/70">
           {app.features.map((feature, i) => (
             <li key={i} className="flex gap-2">

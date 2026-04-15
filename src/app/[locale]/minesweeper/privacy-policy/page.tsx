@@ -50,6 +50,8 @@ export default async function MinesweeperPrivacyPolicy({
                 {dict.common.applePrivacyPolicy}
               </a>
             </p>
+            <h3 className="mt-3 font-medium text-white/80">{pp.analyticsTitle}</h3>
+            <p className="mt-1">{pp.analytics}</p>
           </div>
           <div>
             <h2 className="font-semibold text-white/90">{pp.iapTitle}</h2>

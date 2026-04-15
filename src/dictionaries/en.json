@@ -76,7 +76,7 @@
     ],
     "privacyPolicy": {
       "title": "Privacy Policy",
-      "lastUpdated": "Last updated: April 8, 2026",
+      "lastUpdated": "Last updated: April 15, 2026",
       "overviewTitle": "Overview",
       "overview": "Minesweeper Swipe (\"the App\") is developed by Ullim Studio. This privacy policy explains how we handle your information.",
       "dataTitle": "Data We Collect",
@@ -87,6 +87,8 @@
       "admob": "We display banner advertisements through Google AdMob. AdMob may collect and use data to serve personalized or non-personalized ads. This may include device identifiers, IP address, and usage data.",
       "gameCenterTitle": "Apple Game Center",
       "gameCenter": "The App integrates with Apple Game Center for leaderboards. Game Center is managed by Apple and subject to Apple's Privacy Policy.",
+      "analyticsTitle": "Firebase Analytics",
+      "analytics": "We use Firebase Analytics to understand app usage patterns (game sessions, feature usage frequency, etc.). No personal game data or settings are collected.",
       "iapTitle": "In-App Purchases",
       "iap": "The App offers an in-app purchase to remove advertisements. Purchases are processed by Apple and subject to Apple's terms.",
       "childrenTitle": "Children's Privacy",

@@ -43,7 +43,7 @@ export async function generateMetadata({
     description: dict.meta.description,
     icons: {
       icon: "/icons/favicon.svg",
-      apple: "/icons/ullim.png",
+      apple: "/icons/favicon.svg",
     },
   };
 }

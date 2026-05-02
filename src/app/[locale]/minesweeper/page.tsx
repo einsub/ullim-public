@@ -1,12 +1,18 @@
+import { AppStoreCTA } from "@/components/AppStoreCTA";
 import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n";
+import { apps } from "@/lib/apps";
 import Image from "next/image";
 import Link from "next/link";
 
-const screenshots = [
-  { src: "/screenshots/minesweeper/IMG_7187_appstore.png", alt: "Gameplay" },
-  { src: "/screenshots/minesweeper/IMG_7190_appstore.png", alt: "Expert mode" },
-  { src: "/screenshots/minesweeper/IMG_7188_appstore.png", alt: "Records" },
+type Screenshot =
+  | { kind: "video"; src: string; alt: string }
+  | { kind: "image"; src: string; alt: string };
+
+const screenshots: Screenshot[] = [
+  { kind: "video", src: "/screenshots/minesweeper/minesweeper_preview_886x1920.mp4", alt: "Gameplay preview" },
+  { kind: "image", src: "/screenshots/minesweeper/IMG_7189_appstore.png", alt: "Expert mode" },
+  { kind: "image", src: "/screenshots/minesweeper/IMG_7192_appstore.png", alt: "Records" },
 ];
 
 export default async function MinesweeperPage({
@@ -17,6 +23,7 @@ export default async function MinesweeperPage({
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   const app = dict.minesweeper;
+  const meta = apps.minesweeper;
 
   return (
     <div className="flex flex-col min-h-screen px-6 pt-14">
@@ -49,16 +56,29 @@ export default async function MinesweeperPage({
         </p>
 
         <div className="mt-8 grid grid-cols-3 gap-3">
-          {screenshots.map((shot) => (
-            <Image
-              key={shot.src}
-              src={shot.src}
-              alt={shot.alt}
-              width={300}
-              height={650}
-              className="w-full h-auto rounded-xl border border-white/10"
-            />
-          ))}
+          {screenshots.map((shot) =>
+            shot.kind === "video" ? (
+              <video
+                key={shot.src}
+                src={shot.src}
+                aria-label={shot.alt}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto aspect-[886/1920] rounded-xl border border-white/10 object-cover"
+              />
+            ) : (
+              <Image
+                key={shot.src}
+                src={shot.src}
+                alt={shot.alt}
+                width={300}
+                height={650}
+                className="w-full h-auto rounded-xl border border-white/10"
+              />
+            )
+          )}
         </div>
 
         <ul className="mt-8 space-y-2 text-sm text-white/70">
@@ -69,6 +89,10 @@ export default async function MinesweeperPage({
             </li>
           ))}
         </ul>
+
+        <div className="mt-10">
+          <AppStoreCTA app={meta} locale={locale as Locale} />
+        </div>
       </div>
 
       <div className="flex-1" />

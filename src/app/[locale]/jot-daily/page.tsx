@@ -1,5 +1,7 @@
+import { AppStoreCTA } from "@/components/AppStoreCTA";
 import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n";
+import { apps } from "@/lib/apps";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +13,7 @@ export default async function JotDailyPage({
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   const app = dict.jotDaily;
+  const meta = apps.jotDaily;
 
   return (
     <div className="flex flex-col min-h-screen px-6 pt-14">
@@ -67,6 +70,10 @@ export default async function JotDailyPage({
             </li>
           ))}
         </ul>
+
+        <div className="mt-10">
+          <AppStoreCTA app={meta} locale={locale as Locale} />
+        </div>
       </div>
 
       <div className="flex-1" />

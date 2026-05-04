@@ -1,6 +1,11 @@
 {
-  "version": "0.1.0",
-  "notes": "초기 배포 placeholder. 실제 release 후 자동 갱신됨.",
-  "pub_date": "2026-05-05T00:00:00Z",
-  "platforms": {}
+  "version": "0.1.1",
+  "notes": "첫 release. macOS 메뉴에 업데이트 확인 항목 추가 + 자동 업데이트 파이프라인 검증.",
+  "pub_date": "2026-05-04T23:08:13Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSb1FKSDJTWDBnZXBYUElDMlh0aWc1NCs5VTh0T1EwY0IyOGhCamRma0k1N2RqbHNPNnFXdW5WSzFQMjN6L0l5TEFLVWtzclFMTWR6TmRFYldoS2FTSzd5V1hob01XUVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc3OTMzMjg5CWZpbGU6MWRvYy5hcHAudGFyLmd6CnpOQ0FEY2QvSjI1TjJQU2ludDVQcHFJZjlEeGhuL1o4Y1g2dHhYdDJ6NE1tNVByWWlrRC9rOENWRXZrcXZCakZURjF3UGl3cmtNM2U4RWt1WkNMVUJBPT0K",
+      "url": "https://github.com/einsub/halil-release/releases/download/v0.1.1/1doc.app.tar.gz"
+    }
+  }
 }

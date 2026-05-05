@@ -29,5 +29,5 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // api/ 는 로케일 리다이렉트 대상에서 제외 (JSON API는 로케일 무관)
-  matcher: ["/((?!_next|api|favicon.ico|.*\\.).*)"],
+  matcher: ["/((?!_next|api|.+/auth/callback|favicon.ico|.*\\.).*)"],
 };

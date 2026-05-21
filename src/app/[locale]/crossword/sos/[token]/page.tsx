@@ -114,6 +114,8 @@ export default function SosPage({
   const [input, setInput] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [nickname, setNickname] = useState("");
+  const [toast, setToast] = useState<string | null>(null);
+  const [recentlyAnswered, setRecentlyAnswered] = useState<string | null>(null);
 
   // Firestore에서 SOS doc 가져오기
   useEffect(() => {
@@ -221,8 +223,14 @@ export default function SosPage({
       }
       // 로컬 상태 업데이트 + UI 리셋
       setData({ ...data, answers: newAnswers });
+      const wordKey = `${selected.number}-${selected.direction}`;
       setSelected(null);
       setInput("");
+      // 즉시 피드백: 토스트 + 답안 추가된 단어 잠시 강조
+      setToast(`✓ ${input.trim()} — 친구한테 알림이 갈 거예요!`);
+      setRecentlyAnswered(wordKey);
+      setTimeout(() => setToast(null), 3500);
+      setTimeout(() => setRecentlyAnswered(null), 2500);
     } catch (e) {
       alert("전송 실패: " + String(e));
     } finally {
@@ -265,8 +273,23 @@ export default function SosPage({
       <SosWordList
         data={data}
         onSelect={setSelected}
+        recentlyAnswered={recentlyAnswered}
       />
       <SosDownloadCTA />
+
+      {toast && (
+        <div className="fixed left-1/2 bottom-6 -translate-x-1/2 z-[60] pointer-events-none animate-[fadeInUp_0.25s_ease-out]">
+          <div className="bg-emerald-500 text-stone-900 font-bold px-5 py-3 rounded-full shadow-xl text-sm whitespace-nowrap">
+            {toast}
+          </div>
+        </div>
+      )}
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translate(-50%, 8px); }
+          to { opacity: 1; transform: translate(-50%, 0); }
+        }
+      `}</style>
 
       {selected && (
         <SosAnswerForm
@@ -415,9 +438,11 @@ function SosGrid({
 function SosWordList({
   data,
   onSelect,
+  recentlyAnswered,
 }: {
   data: SosDoc;
   onSelect: (w: WordMeta) => void;
+  recentlyAnswered: string | null;
 }) {
   const g = data.gridSnapshot;
   const isWordSolved = (w: WordMeta) => {
@@ -442,14 +467,18 @@ function SosWordList({
     const solved = isWordSolved(w);
     const ac = answeredCount(w);
     const target = isTarget(w);
+    const wordKey = `${w.number}-${w.direction}`;
+    const isRecent = recentlyAnswered === wordKey;
     return (
-      <li key={`${w.number}-${w.direction}`}>
+      <li key={wordKey}>
         <button
           onClick={() => !solved && onSelect(w)}
           disabled={solved}
-          className={`w-full text-left p-3 rounded-lg flex items-start gap-2 ${
+          className={`w-full text-left p-3 rounded-lg flex items-start gap-2 transition-colors duration-300 ${
             solved
               ? "bg-white/[0.03] text-white/30"
+              : isRecent
+              ? "bg-emerald-500/25 text-white ring-2 ring-emerald-400"
               : target
               ? "bg-amber-500/15 text-white hover:bg-amber-500/25"
               : "bg-white/5 text-white/80 hover:bg-white/10"

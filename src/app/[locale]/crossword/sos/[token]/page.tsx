@@ -116,6 +116,8 @@ export default function SosPage({
   const [nickname, setNickname] = useState("");
   const [toast, setToast] = useState<string | null>(null);
   const [recentlyAnswered, setRecentlyAnswered] = useState<string | null>(null);
+  // 교차점 셀 클릭 시 가로/세로 중 어느 단어를 답할지 고르는 시트
+  const [dirPicker, setDirPicker] = useState<WordMeta[] | null>(null);
 
   // Firestore에서 SOS doc 가져오기
   useEffect(() => {
@@ -269,6 +271,7 @@ export default function SosPage({
         data={data}
         selected={selected}
         onSelect={setSelected}
+        onMultiWord={setDirPicker}
       />
       <SosWordList
         data={data}
@@ -311,7 +314,64 @@ export default function SosPage({
           }}
         />
       )}
+
+      {dirPicker && (
+        <SosDirectionPicker
+          words={dirPicker}
+          onPick={(w) => {
+            setDirPicker(null);
+            setSelected(w);
+          }}
+          onCancel={() => setDirPicker(null)}
+        />
+      )}
     </main>
+  );
+}
+
+function SosDirectionPicker({
+  words,
+  onPick,
+  onCancel,
+}: {
+  words: WordMeta[];
+  onPick: (w: WordMeta) => void;
+  onCancel: () => void;
+}) {
+  return (
+    <div
+      className="fixed inset-0 bg-black/70 flex items-end sm:items-center justify-center z-50"
+      onClick={onCancel}
+    >
+      <div
+        className="w-full sm:max-w-md bg-stone-900 rounded-t-2xl sm:rounded-2xl p-5 space-y-3"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <p className="text-sm text-white/60 text-center">
+          어느 문제를 도와줄까요?
+        </p>
+        {words.map((w) => (
+          <button
+            key={`${w.number}-${w.direction}`}
+            onClick={() => onPick(w)}
+            className="w-full text-left p-4 rounded-lg bg-white/5 hover:bg-white/10 text-white/90 flex items-start gap-2"
+          >
+            <span className="shrink-0 text-xs font-mono mt-0.5">
+              {w.direction === "across" ? "가로" : "세로"} {w.number}번
+            </span>
+            <span className="flex-1 text-sm">
+              ({w.length}글자) {w.hint}
+            </span>
+          </button>
+        ))}
+        <button
+          onClick={onCancel}
+          className="w-full py-3 rounded-lg bg-white/10 text-white/70 mt-1"
+        >
+          취소
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -343,10 +403,12 @@ function SosHeader({ data }: { data: SosDoc }) {
 function SosGrid({
   data,
   onSelect,
+  onMultiWord,
 }: {
   data: SosDoc;
   selected: WordMeta | null;
   onSelect: (w: WordMeta) => void;
+  onMultiWord: (words: WordMeta[]) => void;
 }) {
   const g = data.gridSnapshot;
   const isBlack = (r: number, c: number) =>
@@ -390,7 +452,13 @@ function SosGrid({
       return false;
     });
     if (!wordsAtCell.length) return;
-    onSelect(wordsAtCell[0]);
+    // 교차점(가로+세로 동시) 셀은 어느 단어를 답할지 모호 → 선택 시트.
+    // 단일 단어 셀은 바로 선택.
+    if (wordsAtCell.length === 1) {
+      onSelect(wordsAtCell[0]);
+    } else {
+      onMultiWord(wordsAtCell);
+    }
   };
 
   return (

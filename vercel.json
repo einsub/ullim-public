@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/crossword/cleanup-share-images",
+      "schedule": "0 18 * * *"
+    }
+  ]
+}

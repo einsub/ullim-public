@@ -1,5 +1,8 @@
 import type { Locale } from "@/i18n";
 
+/** QR 코드처럼 절대 URL 이 필요한 곳에서 쓴다. */
+export const SITE_URL = "https://ull.im";
+
 export type AppKey = "crossword" | "minesweeper" | "jotDaily";
 
 export type AppMeta = {
@@ -18,6 +21,8 @@ export const apps: Record<AppKey, AppMeta> = {
     icon: "/icons/crossword.png",
     released: true,
     appStoreUrl: "https://apps.apple.com/app/id6761682839",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.ullim.crossword",
   },
   minesweeper: {
     key: "minesweeper",

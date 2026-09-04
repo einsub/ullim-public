@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState, use } from "react";
 import Image from "next/image";
+import { apps } from "@/lib/apps";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Firestore REST 헬퍼
@@ -100,14 +101,12 @@ interface SosDoc {
 // ─────────────────────────────────────────────────────────────────────────────
 // 페이지
 
-const APP_STORE_URL = "https://apps.apple.com/app/id6761682839";
-
 export default function SosPage({
   params,
 }: {
   params: Promise<{ locale: string; token: string }>;
 }) {
-  const { token } = use(params);
+  const { token, locale } = use(params);
   const [data, setData] = useState<SosDoc | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<WordMeta | null>(null);
@@ -248,7 +247,7 @@ export default function SosPage({
       <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <p className="text-white/70">{error}</p>
         <a
-          href={APP_STORE_URL}
+          href={`/${locale}/crossword/get`}
           className="mt-6 text-sm underline text-white/60"
         >
           낱말퀴즈 받기
@@ -671,24 +670,49 @@ function SosAnswerForm({
 }
 
 function SosDownloadCTA() {
+  // 이 페이지는 답을 알려주러 온 친구가 보는 화면이라 리다이렉트하지 않는다.
+  // 대신 양쪽 배지를 나란히 두어 어느 기기에서 열든 설치 경로가 있게 한다.
+  const app = apps.crossword;
   return (
     <section className="mt-10 pt-6 border-t border-white/10 text-center">
       <p className="text-sm text-white/60 mb-3">
         나도 이 게임 한 판?
       </p>
-      <a
-        href={APP_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block"
-      >
-        <Image
-          src="/badges/app-store-ko.svg"
-          alt="App Store에서 받기"
-          width={140}
-          height={47}
-        />
-      </a>
+      <div className="flex items-center justify-center gap-3">
+        {app.appStoreUrl && (
+          <a
+            href={app.appStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block transition-opacity hover:opacity-80"
+          >
+            <Image
+              src="/badges/app-store-ko.svg"
+              alt="App Store에서 받기"
+              width={140}
+              height={47}
+              className="h-11 w-auto"
+            />
+          </a>
+        )}
+        {app.playStoreUrl && (
+          <a
+            href={app.playStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block transition-opacity hover:opacity-80"
+          >
+            <Image
+              src="/badges/play-store-ko.png"
+              alt="Google Play에서 받기"
+              width={155}
+              height={60}
+              className="h-11 w-auto"
+              unoptimized
+            />
+          </a>
+        )}
+      </div>
     </section>
   );
 }

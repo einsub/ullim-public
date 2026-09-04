@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { AppMeta } from "@/lib/apps";
+import { SITE_URL, getAppHref, type AppMeta } from "@/lib/apps";
 import type { Locale } from "@/i18n";
 import { getQrSvg } from "@/lib/qr";
 
@@ -11,7 +11,13 @@ type Props = {
 export async function AppStoreCTA({ app, locale }: Props) {
   if (!app.released || !app.appStoreUrl) return null;
 
-  const qrSvg = await getQrSvg(app.appStoreUrl);
+  // 스토어가 둘이면 QR 이 App Store 만 가리키면 안 된다 — 안드로이드 사용자가
+  // 찍었을 때 엉뚱한 곳으로 간다. 랜딩 페이지로 보내 각자 고르게 한다.
+  // 스토어가 하나뿐인 앱은 한 단계 줄여 바로 그 스토어로 보낸다.
+  const qrTarget = app.playStoreUrl
+    ? `${SITE_URL}${getAppHref(app, locale)}`
+    : app.appStoreUrl;
+  const qrSvg = await getQrSvg(qrTarget);
   const appStoreBadge = locale === "ko"
     ? "/badges/app-store-ko.svg"
     : "/badges/app-store-en.svg";

@@ -72,7 +72,10 @@ export async function GET(
   after(() =>
     sendGa4Event("store_redirect", {
       src,
-      platform: platform ?? "unknown",
+      // 파라미터 이름을 platform 으로 두면 GA4 기본 측정기준과 충돌해
+      // 맞춤 측정기준으로 등록할 수 없다. 어느 스토어로 보냈는지가
+      // 이 이벤트에서 가장 중요한 값이라 이름을 따로 준다.
+      store: platform ?? "unknown",
       locale: lc,
       app: app.key,
       // 스토어까지 갔는지, 랜딩으로 떨어졌는지. 후자가 많으면 UA 판별이

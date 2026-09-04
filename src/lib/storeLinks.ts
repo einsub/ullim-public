@@ -84,9 +84,18 @@ export function storeUrl(
   // iOS — Provider Token 이 없으면 붙일 게 없다.
   if (!app.ascProviderToken) return base;
 
+  // 캠페인 링크는 Apple 이 지정한 `/app/apple-store/id{id}` 형식을 쓴다.
+  // 평소 쓰는 `/app/id{id}` 와 경로가 다른데, ASC 가 생성해 주는 링크가 전자라
+  // 굳이 다른 형태로 보내서 위험을 만들 이유가 없다.
+  const appStoreId = base.match(/\/id(\d+)/)?.[1];
+  if (!appStoreId) return base;
+
   const ct = `${campaign.medium}_${campaign.campaign}`.slice(0, CT_MAX_LENGTH);
-  url.searchParams.set("pt", app.ascProviderToken);
-  url.searchParams.set("ct", ct);
-  url.searchParams.set("mt", "8");
-  return url.toString();
+  const campaignUrl = new URL(
+    `https://apps.apple.com/app/apple-store/id${appStoreId}`,
+  );
+  campaignUrl.searchParams.set("pt", app.ascProviderToken);
+  campaignUrl.searchParams.set("ct", ct);
+  campaignUrl.searchParams.set("mt", "8");
+  return campaignUrl.toString();
 }

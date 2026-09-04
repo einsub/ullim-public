@@ -31,9 +31,9 @@ export const apps: Record<AppKey, AppMeta> = {
     appStoreUrl: "https://apps.apple.com/app/id6761682839",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.ullim.crossword",
-    // TODO: ASC 에서 Provider Token 확보 후 채운다. 그때까지 iOS 유입은
-    //       캠페인 구분 없이 집계된다 (Android 는 referrer 로 이미 구분됨).
-    ascProviderToken: undefined,
+    // ASC → 분석 → 유입 경로 → 캠페인 에서 캠페인 링크를 만들어 얻은 값
+    // (2026-09-04). brag_viral / sos_viral / web_landing 3개를 등록해 두었다.
+    ascProviderToken: "128734380",
   },
   minesweeper: {
     key: "minesweeper",

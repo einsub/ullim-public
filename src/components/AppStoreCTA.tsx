@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SITE_URL, getAppHref, type AppMeta } from "@/lib/apps";
 import type { Locale } from "@/i18n";
 import { getQrSvg } from "@/lib/qr";
+import { CAMPAIGNS, storeUrl } from "@/lib/storeLinks";
 
 type Props = {
   app: AppMeta;
@@ -18,6 +19,15 @@ export async function AppStoreCTA({ app, locale }: Props) {
     ? `${SITE_URL}${getAppHref(app, locale)}`
     : app.appStoreUrl;
   const qrSvg = await getQrSvg(qrTarget);
+
+  // 랜딩 페이지를 거쳐 들어온 설치를 스토어 자연 유입과 구분한다.
+  // 이걸 안 붙이면 카카오 유입만 라벨이 붙고 나머지가 전부 (direct) 로 뭉쳐서,
+  // 정작 비교 기준이 되어야 할 "그 외" 가 무의미해진다.
+  //
+  // 여기서는 /get 을 거치지 않는다. 그 경로는 crossword 전용이고, 이 컴포넌트는
+  // 모든 앱이 공유한다. 클릭 수는 랜딩 페이지 자체의 웹 분석으로 이미 보인다.
+  const iosHref = storeUrl(app, "ios", CAMPAIGNS.web) ?? app.appStoreUrl;
+  const androidHref = storeUrl(app, "android", CAMPAIGNS.web);
   const appStoreBadge = locale === "ko"
     ? "/badges/app-store-ko.svg"
     : "/badges/app-store-en.svg";
@@ -34,7 +44,7 @@ export async function AppStoreCTA({ app, locale }: Props) {
       />
       <div className="flex flex-col gap-2">
         <a
-          href={app.appStoreUrl}
+          href={iosHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block transition-opacity hover:opacity-80"
@@ -48,9 +58,9 @@ export async function AppStoreCTA({ app, locale }: Props) {
             unoptimized
           />
         </a>
-        {app.playStoreUrl && (
+        {androidHref && (
           <a
-            href={app.playStoreUrl}
+            href={androidHref}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block transition-opacity hover:opacity-80"

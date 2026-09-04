@@ -247,7 +247,7 @@ export default function SosPage({
       <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <p className="text-white/70">{error}</p>
         <a
-          href={`/${locale}/crossword/get`}
+          href={`/${locale}/crossword/get?src=sos`}
           className="mt-6 text-sm underline text-white/60"
         >
           낱말퀴즈 받기
@@ -277,7 +277,7 @@ export default function SosPage({
         onSelect={setSelected}
         recentlyAnswered={recentlyAnswered}
       />
-      <SosDownloadCTA />
+      <SosDownloadCTA locale={locale} />
 
       {toast && (
         <div className="fixed left-1/2 bottom-6 -translate-x-1/2 z-[60] pointer-events-none animate-[fadeInUp_0.25s_ease-out]">
@@ -669,10 +669,18 @@ function SosAnswerForm({
   );
 }
 
-function SosDownloadCTA() {
+function SosDownloadCTA({ locale }: { locale: string }) {
   // 이 페이지는 답을 알려주러 온 친구가 보는 화면이라 리다이렉트하지 않는다.
   // 대신 양쪽 배지를 나란히 두어 어느 기기에서 열든 설치 경로가 있게 한다.
+  //
+  // 배지가 스토어를 직접 가리키지 않고 /get 을 거치는 이유는 둘이다.
+  // (1) 여기가 클릭을 셀 수 있는 유일한 지점이다.
+  // (2) 캠페인 파라미터 조립을 한 곳에 모아둔다.
+  // UA 판별에 맡기면 아이폰에서 Play 배지를 누른 사람이 App Store 로
+  // 끌려가므로, 누른 배지를 `p` 로 못박아 보낸다.
   const app = apps.crossword;
+  const getHref = (p: "ios" | "android") =>
+    `/${locale}/crossword/get?src=sos&p=${p}`;
   return (
     <section className="mt-10 pt-6 border-t border-white/10 text-center">
       <p className="text-sm text-white/60 mb-3">
@@ -681,7 +689,7 @@ function SosDownloadCTA() {
       <div className="flex items-center justify-center gap-3">
         {app.appStoreUrl && (
           <a
-            href={app.appStoreUrl}
+            href={getHref("ios")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block transition-opacity hover:opacity-80"
@@ -697,7 +705,7 @@ function SosDownloadCTA() {
         )}
         {app.playStoreUrl && (
           <a
-            href={app.playStoreUrl}
+            href={getHref("android")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block transition-opacity hover:opacity-80"
